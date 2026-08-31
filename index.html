@@ -3,10 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Portfolio</title>
+    <title>Dylan Manley - Portfolio</title>
+    <style>
+      html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; }
+      #unity-canvas { width: 100%; height: 100%; display: block; }
+    </style>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1" style="width: 1920px; height: 1080px; background: #000000"></canvas>
+    <canvas id="unity-canvas" tabindex="-1" style="background: #000000"></canvas>
     <script src="Build/PortfolioSite.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -34,7 +38,7 @@
         companyName: "Dylan Manley",
         productName: "Portfolio",
         productVersion: "0.1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        matchWebGLToCanvasSize: true, // canvas now fills its container (see <style> above), so this keeps the WebGL render resolution in sync with it automatically
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       }).then((unityInstance) => {
       }).catch((message) => {
